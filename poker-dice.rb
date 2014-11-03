@@ -27,4 +27,10 @@ class Hand
     end
   end
 
+  def display_hand
+    string = ""
+    @dice.each { |dice| string << "#{dice.top_face} " }
+    string
+  end
+
 end

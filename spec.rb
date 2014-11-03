@@ -22,4 +22,9 @@ describe Hand do
     end
   end
 
+  describe ".display_hand" do
+    it "returns current hand" do
+      expect(hand.display_hand.length).to equal(10)
+    end
+  end
 end
