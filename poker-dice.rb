@@ -32,4 +32,8 @@ class Hand
     string.strip
   end
 
+  def score_hash
+    master_hash = {"9" => 0, "T" => 0, "J" => 0, "Q" => 0, "K" => 0, "A" => 0}
+  end
+
 end
