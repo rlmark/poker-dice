@@ -1,4 +1,4 @@
-require './poker-dice.rb'
+require_relative 'poker-dice'
 
 describe Hand do
 
@@ -7,6 +7,10 @@ describe Hand do
   describe ".new" do
     it "returns new instance" do
       expect(hand).to be_a Hand
+    end
+
+    it "has five Die objects" do
+      expect(hand.die.count).to equal(5)
     end
   end
 
