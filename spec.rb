@@ -16,6 +16,10 @@ describe Hand do
     it "contains at least one Dice object" do
       expect(hand.dice.first.class).to equal(Die)
     end
+
+    it "has access to die's top_face" do
+      expect(hand.dice.last.top_face).to match(/9|T|J|Q|K|A/)
+    end
   end
 
 end
