@@ -13,14 +13,14 @@ class Die
 end
 
 class Hand
-  attr_accessor :die
+  attr_accessor :dice
 
   def initialize
-    @die = make_die
+    @dice = make_dice
 
   end
 
-  def make_die
+  def make_dice
     var_names = ["d1", "d2", "d3", "d4", "d5"]
     var_names.collect do |var|
       var = Die.new
