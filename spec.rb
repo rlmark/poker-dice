@@ -9,8 +9,12 @@ describe Hand do
       expect(hand).to be_a Hand
     end
 
-    it "has five Die objects" do
+    it "has five objects" do
       expect(hand.die.count).to equal(5)
+    end
+
+    it "contains at least one Die object" do
+      expect(hand.die.first.class).to equal(Die)
     end
   end
 

@@ -16,6 +16,15 @@ class Hand
   attr_accessor :die
 
   def initialize
-    @die = [1,2,3,4,5]
+    @die = make_die
+
   end
+
+  def make_die
+    var_names = ["d1", "d2", "d3", "d4", "d5"]
+    var_names.collect do |var|
+      var = Die.new
+    end
+  end
+
 end
