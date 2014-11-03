@@ -13,7 +13,6 @@ class Die
 end
 
 class Hand
-  attr_accessor:
   def initialize
   end
 end
