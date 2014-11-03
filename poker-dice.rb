@@ -13,6 +13,9 @@ class Die
 end
 
 class Hand
+  attr_accessor :die
+
   def initialize
+    @die = [1,2,3,4,5]
   end
 end
