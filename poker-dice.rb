@@ -47,7 +47,7 @@ class Hand
     string.strip
   end
 
-  def score_hash
+  def count_hash
     master_hash = {"9" => 0, "T" => 0, "J" => 0, "Q" => 0, "K" => 0, "A" => 0}
     @dice.each do |die|
       master_hash[die.top_face] += 1

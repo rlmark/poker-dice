@@ -28,17 +28,27 @@ describe Hand do
     end
   end
 
-  describe ".score_hash" do
+  describe ".count_hash" do
     it "returns a hash of scores" do
-      expect(hand.score_hash.class).to equal(Hash)
+      expect(hand.count_hash.class).to equal(Hash)
     end
 
     it "returns the count of each top_face for a loaded dice" do
       dice = 5.times.map{ LoadedDie.new('Q') }
       hand = Hand.new(dice)
 
-      expect(hand.score_hash).to eq({"9" => 0, "T" => 0, "J" => 0, "Q" => 5, "K" => 0, "A" => 0})
+      expect(hand.count_hash).to eq({"9" => 0, "T" => 0, "J" => 0, "Q" => 5, "K" => 0, "A" => 0})
     end
+  end
+
+  describe ".rank" do
+    it "returns rank of hand" do
+      dice = 5.times.map{ LoadedDie.new('Q') }
+      hand = Hand.new(dice)
+
+      expect(hand.rank).to equal('five of a kind')
+    end
+
   end
 
 end
