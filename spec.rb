@@ -24,7 +24,13 @@ describe Hand do
 
   describe ".display_hand" do
     it "returns current hand" do
-      expect(hand.display_hand.length).to equal(10)
+      expect(hand.display_hand.length).to equal(9)
+    end
+  end
+
+  describe ".score_hash" do
+    it "returns a hash of scores" do
+      expect(hand.score_hash.class).to equal(Hash)
     end
   end
 end

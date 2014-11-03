@@ -17,7 +17,6 @@ class Hand
 
   def initialize
     @dice = make_dice
-
   end
 
   def make_dice
@@ -30,7 +29,7 @@ class Hand
   def display_hand
     string = ""
     @dice.each { |dice| string << "#{dice.top_face} " }
-    string
+    string.strip
   end
 
 end
