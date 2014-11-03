@@ -11,3 +11,9 @@ class Die
   end
 
 end
+
+class Hand
+  attr_accessor:
+  def initialize
+  end
+end
