@@ -62,6 +62,7 @@ class Hand
     when @master_hash.has_value?(5) ; 'five of a kind'
     when straight_check ; 'straight'
     when full_house_check ; 'full house'
+    when two_pair_check ; 'two pair'
     end
 
   end
@@ -79,7 +80,11 @@ class Hand
   end
 
   def full_house_check
-    true if @master_hash.values.include?(2 && 3)
+    @master_hash.values.include?(2 && 3)
+  end
+
+  def two_pair_check
+    @master_hash.values.include?(2 && 2)
   end
 
 end
