@@ -49,24 +49,23 @@ describe Hand do
       expect(hand.rank).to eq('five of a kind')
     end
 
-    it "returns a straight" do
-      dice = [LoadedDie.new('9'), LoadedDie.new('T'), LoadedDie.new('Q'), LoadedDie.new('K'), LoadedDie.new('J') ]
-      hand = Hand.new(dice)
+    def create_hand(array)
+      dice = array.each.map { |face| LoadedDie.new(face) }
+      Hand.new(dice)
+    end
 
+    it "returns a straight" do
+      hand = create_hand(['9', 'T', 'Q', 'K', 'J'])
       expect(hand.rank).to eq('straight')
     end
 
     it "returns a full house" do
-      dice = [LoadedDie.new('9'), LoadedDie.new('9'), LoadedDie.new('Q'), LoadedDie.new('Q'), LoadedDie.new('Q') ]
-      hand = Hand.new(dice)
-
+      hand = create_hand(['9', '9', 'Q', 'Q', 'Q'])
       expect(hand.rank).to eq('full house')
     end
 
     it "returns two pair" do
-      dice = [LoadedDie.new('9'), LoadedDie.new('9'), LoadedDie.new('Q'), LoadedDie.new('Q'), LoadedDie.new('K') ]
-      hand = Hand.new(dice)
-
+      hand = create_hand(['9', '9', 'Q', 'Q', 'K'])
       expect(hand.rank).to eq('two pair')
     end
   end
