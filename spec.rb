@@ -73,6 +73,11 @@ describe Hand do
       hand = create_hand(['9', '9', '9', '9', 'K'])
       expect(hand.rank).to eq('four of a kind')
     end
+
+    it "returns three of a kind" do
+      hand = create_hand(['9', '9', '9', 'Q', 'K'])
+      expect(hand.rank).to eq('three of a kind')
+    end
   end
 
 end
