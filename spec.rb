@@ -42,13 +42,19 @@ describe Hand do
   end
 
   describe ".rank" do
-    it "returns rank of hand" do
+    it "returns five of a kind" do
       dice = 5.times.map{ LoadedDie.new('Q') }
       hand = Hand.new(dice)
 
       expect(hand.rank).to eq('five of a kind')
     end
 
+    it "returns a straight" do
+      dice = [LoadedDie.new('9'), LoadedDie.new('T'), LoadedDie.new('Q'), LoadedDie.new('K'), LoadedDie.new('J') ]
+      hand = Hand.new(dice)
+
+      expect(hand.rank).to eq('straight')
+    end
   end
 
 end
