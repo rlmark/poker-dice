@@ -46,7 +46,7 @@ describe Hand do
       dice = 5.times.map{ LoadedDie.new('Q') }
       hand = Hand.new(dice)
 
-      expect(hand.rank).to equal('five of a kind')
+      expect(hand.rank).to eq('five of a kind')
     end
 
   end

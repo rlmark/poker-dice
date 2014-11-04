@@ -32,6 +32,7 @@ class Hand
 
   def initialize( dice )
     @dice = dice
+    @master_hash = count_hash
   end
 
   # def make_dice
@@ -54,6 +55,13 @@ class Hand
       master_hash[die.top_face] += 1
     end
     return master_hash
+  end
+
+  def rank
+    case
+    when @master_hash.values.include?(5) ; 'five of a kind'
+    end
+      
   end
 
 end
