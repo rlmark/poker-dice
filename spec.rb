@@ -62,6 +62,13 @@ describe Hand do
 
       expect(hand.rank).to eq('full house')
     end
+
+    it "returns two pair" do
+      dice = [LoadedDie.new('9'), LoadedDie.new('9'), LoadedDie.new('Q'), LoadedDie.new('Q'), LoadedDie.new('K') ]
+      hand = Hand.new(dice)
+
+      expect(hand.rank).to eq('two pair')
+    end
   end
 
 end
