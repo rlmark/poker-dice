@@ -41,14 +41,4 @@ describe Hand do
     end
   end
 
-  describe ".rank" do
-    it "returns rank of hand" do
-      dice = 5.times.map{ LoadedDie.new('Q') }
-      hand = Hand.new(dice)
-
-      expect(hand.rank).to equal('five of a kind')
-    end
-
-  end
-
 end
