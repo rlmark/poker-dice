@@ -61,6 +61,7 @@ class Hand
     case
     when @master_hash.has_value?(5) ; 'five of a kind'
     when straight_check ; 'straight'
+    when full_house_check ; 'full house'
     end
 
   end
@@ -75,6 +76,10 @@ class Hand
     end
 
     array.all? { |a| a == 1 }
+  end
+
+  def full_house_check
+    true if @master_hash.values.include?(2 && 3)
   end
 
 end
