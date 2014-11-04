@@ -78,6 +78,11 @@ describe Hand do
       hand = create_hand(['9', '9', '9', 'Q', 'K'])
       expect(hand.rank).to eq('three of a kind')
     end
+
+    it "returns one pair" do
+      hand = create_hand(['9', '9', 'J', 'Q', 'K'])
+      expect(hand.rank).to eq('one pair')
+    end
   end
 
 end
