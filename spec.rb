@@ -55,6 +55,13 @@ describe Hand do
 
       expect(hand.rank).to eq('straight')
     end
+
+    it "returns a full house" do
+      dice = [LoadedDie.new('9'), LoadedDie.new('9'), LoadedDie.new('Q'), LoadedDie.new('Q'), LoadedDie.new('Q') ]
+      hand = Hand.new(dice)
+
+      expect(hand.rank).to eq('full house')
+    end
   end
 
 end
