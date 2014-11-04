@@ -63,6 +63,7 @@ class Hand
     when straight_check ; 'straight'
     when full_house_check ; 'full house'
     when two_pair_check ; 'two pair'
+    when four_of_a_kind ; 'four of a kind'
     end
 
   end
@@ -85,6 +86,10 @@ class Hand
 
   def two_pair_check
     @master_hash.values.include?(2 && 2)
+  end
+
+  def four_of_a_kind
+    @master_hash.values.include?(4)
   end
 
 end
