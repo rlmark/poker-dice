@@ -59,9 +59,22 @@ class Hand
 
   def rank
     case
-    when @master_hash.values.include?(5) ; 'five of a kind'
+    when @master_hash.has_value?(5) ; 'five of a kind'
+    when straight_check ; 'straight'
     end
-      
+
+  end
+
+  def straight_check
+    array = @master_hash.values
+
+    if array.first == 0
+      array.shift
+    elsif array.last == 0
+      array.pop
+    end
+
+    array.all? { |a| a == 1 }
   end
 
 end
